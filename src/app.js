@@ -6,6 +6,7 @@ const forecast = require('./utils/weather-stack');
 
 console.log(__dirname); // directory to filename lives within
 const app = express(); // Create a express app
+const port = process.env.PORT || 3000;
 
 // Define Paths for Express config 
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -117,6 +118,6 @@ app.get('*', (req, res) => {
 // app.com/help
 // app.com/about
 
-app.listen(3000, ()=> {
-    console.log('Server is up on port 3000');
+app.listen(port, ()=> {
+    console.log('Server is up on port '+ port);
 })
